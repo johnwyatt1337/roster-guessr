@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roster Guessr</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="Roster Guessr Logo">
+        </div>
+        <div class="nav-buttons">
+            <button id="daily-challenge-btn">Daily Challenge</button>
+            <button id="gauntlet-mode-btn">Gauntlet Mode</button>
+            <button id="free-mode-btn">Free Mode</button>
+            <button id="player-challenge-btn">Player Challenge</button>
+            <button id="about-site-btn">About Site</button> <!-- New button -->
+        </div>
+    </header>
+
+    <main>
+        <p id="instructions">Select a game mode!</p>
+        <div id="game-area" style="display: none;">
+            <p id="team-info"></p>
+            <input type="text" id="player-guess" placeholder="Enter a player's name">
+            <div id="player-suggestions" class="player-suggestions"></div>
+            
+            <button id="submit-guess">Submit Guess</button>
+            <p id="feedback"></p>
+            <p id="progress"></p>
+            
+            <div id="team-logo-container" class="team-logo-container" style="display: none;">
+                <img id="team-logo" class="team-logo" src="" alt="Team Logo">
+            </div>
+            <div id="player-slots" class="player-slots"></div>
+        </div>
+
+        <div id="free-mode-container" style="display: none;">
+            <h2>Select a Team:</h2>
+            <div id="team-logo-list" class="team-logo-list"></div>
+        </div>
+
+        <div id="player-challenge-container" style="display: none;">
+            <p id="player-challenge-instructions"></p>
+            <div id="player-challenge-input-wrapper">
+                <input type="text" id="player-challenge-guess" placeholder="Enter the team name">
+                <div id="team-suggestions" class="team-suggestions"></div>
+            </div>
+            <button id="player-challenge-submit">Submit Guess</button>
+            <p id="player-challenge-feedback"></p>
+            <div id="player-challenge-images">
+                <!-- Player image and team logo will be dynamically added here -->
+            </div>
+        </div>
+
+        <div id="about-site-container" style="display: none;">
+            <p>I hope this site can be a fun addition to your morning routine.</p>
+            <p>I believe this site to be the best way to nail down NBA rosters. Enjoy the different modes and share your results with your friends!</p>
+            <p>Only players with salaries listed on ESPN.com are listed in the rosters on this site. This is to prevent confusion from 2-way and 10 day players</p>
+            <p>Consider buying me a coffee at the top of the page, as this site is not free to host.</p>
+            <p>Also, I'm looking for work! Email me at <a href="mailto:johnwyatt1337@gmail.com">johnwyatt1337@gmail.com</a> for business inquiries.</p>
+        </div>
+    </main>
+
+    <script type="module" src="scripts.js"></script>
+    
+    
+</body>
+</html>

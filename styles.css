@@ -1,0 +1,341 @@
+/* General body styling */
+body {
+    background: linear-gradient(to bottom, #001f3f, #003366); /* Dark blue gradient */
+    color: #ffffff; /* White text for contrast */
+    font-family: 'Arial', sans-serif; /* Clean and professional font */
+    margin: 0;
+    padding-bottom: 100px; /* Adds space at the bottom of the page */
+}
+
+/* Header styling */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #00274d; /* Dark blue */
+    border-bottom: 3px solid #ffffff; /* White border for contrast */
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+.logo {
+    display: flex;
+    align-items: center; /* Vertically centers the logo */
+}
+
+.logo img {
+    height: 10vw; /* Makes the logo size relative to the viewport width */
+    max-height: 120px; /* Sets a maximum size for larger screens */
+    width: auto; /* Maintains aspect ratio */
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 10px;
+    margin: 0;
+}
+
+.nav-buttons button {
+    background-color: #c8102e; /* NBA red */
+    color: #ffffff; /* White text */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.nav-buttons button:hover {
+    background-color: #a60d24; /* Slightly darker red on hover */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column; /* Stacks the logo and buttons vertically */
+        align-items: center;
+    }
+    .logo {
+        position: static; /* Centers the logo in the header */
+        margin-bottom: 10px;
+    }
+    .logo img {
+        height: 15vw; /* Adjusts logo size for smaller screens */
+        max-height: 60px; /* Sets a smaller max size for small screens */
+    }
+    .nav-buttons {
+        justify-content: center; /* Centers the buttons */
+    }
+    .nav-buttons button {
+        padding: 8px 12px;
+    }
+}
+
+/* Main content styling */
+main {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#instructions {
+    font-size: 18px;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+/* Player slots styling */
+.player-slots {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.player-slot {
+    width: 100px;
+    height: 100px;
+    border: 2px dashed #ffffff; /* White dashed border */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #003366; /* Dark blue */
+    position: relative;
+    color: #ffffff; /* White text */
+}
+
+.player-image {
+    max-width: 100%;
+    max-height: 100%;
+    display: none; /* Hidden by default */
+}
+
+/* Suggestions dropdown container */
+.player-suggestions {
+    position: absolute;
+    background-color: #ffffff; /* White background */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    display: none; /* Hidden by default */
+    padding: 5px; /* Adds padding inside the dropdown */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for better visibility */
+    width: auto; /* Automatically adjusts width based on content */
+    min-width: 200px; /* Ensures a minimum width for better usability */
+}
+
+/* Individual suggestion item */
+.suggestion-item {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px; /* Adds padding around each suggestion */
+    cursor: pointer;
+    transition: background-color 0.2s;
+    white-space: nowrap; /* Prevents text from wrapping */
+}
+
+.suggestion-item:hover {
+    background-color: #f0f0f0;
+}
+
+.suggestion-item.active {
+    background-color: #d3d3d3; /* Light gray background for active item */
+}
+
+/* Player image in suggestion */
+.suggestion-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* Player name in suggestion */
+.suggestion-name {
+    font-size: 14px;
+    color: #333;
+}
+
+/* Team logo container */
+.team-logo-container {
+    display: flex;
+    justify-content: center; /* Centers the logo horizontally */
+    align-items: center; /* Centers the logo vertically */
+    margin: 0 auto; /* Ensures the container itself is centered */
+    width: 100%; /* Ensures the container spans the full width */
+    text-align: center; /* Centers inline content like the image */
+}
+
+.team-logo {
+    width: 150px; /* Adjust size as needed */
+    height: auto;
+    display: block; /* Ensures the image is treated as a block element */
+    margin: 0 auto; /* Centers the image inside the container */
+    border: none; /* Removes any border */
+    background: none; /* Removes any background color */
+}
+
+/* Team logo list styling */
+.team-logo-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+    background: none; /* Remove any background color */
+    border: none; /* Remove any border */
+    padding: 0; /* Remove padding */
+}
+
+.team-logo-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+    background: none; /* Remove any background color */
+    border: none; /* Remove any border */
+    box-shadow: none; /* Remove any shadow */
+}
+
+.team-logo-item:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+.team-logo-item img {
+    width: 100px;
+    height: auto;
+    border-radius: 10px; /* Optional: Keep rounded corners if desired */
+    margin-bottom: 10px;
+}
+
+.team-logo-item p {
+    font-size: 14px;
+    color: #ffffff; /* White text */
+    text-align: center;
+}
+
+/* Progress container styling */
+#progress-container {
+    display: flex;
+    align-items: center; /* Vertically align progress text and button */
+    justify-content: center; /* Center the container horizontally */
+    gap: 10px; /* Add spacing between the progress text and button */
+    margin-bottom: 10px; /* Add spacing below the container */
+    color: #ffffff; /* White text */
+}
+
+/* Footer or additional spacing */
+footer {
+    margin-top: 20px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 12px;
+}
+
+#player-challenge-container .player-image {
+    max-width: 150px;
+    max-height: 150px;
+    margin: 10px;
+    display: block;
+}
+
+#player-challenge-container .team-logo {
+    max-width: 100px;
+    max-height: 100px;
+    margin: 10px;
+    display: block;
+}
+
+.team-suggestions {
+    position: absolute;
+    background-color: #ffffff; /* White background */
+    border: 1px solid #ccc;
+    border-radius: px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    display: none; /* Hidden by default */
+    padding: 5px; /* Adds padding inside the dropdown */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for better visibility */
+    width: auto; /* Automatically adjusts width based on content */
+    min-width: 200px; /* Ensures a minimum width for better usability */
+}
+
+.team-suggestions .suggestion-item {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px; /* Adds padding around each suggestion */
+    cursor: pointer;
+    transition: background-color 0.2s;
+    white-space: nowrap; /* Prevents text from wrapping */
+}
+
+.team-suggestions .suggestion-item:hover {
+    background-color: #f0f0f0;
+}
+
+.team-suggestions .team-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px; /* Optional: Rounded corners */
+    margin-right: 10px;
+}
+
+.team-suggestions .team-name {
+    font-size: 14px;
+    color: #333;
+}
+
+#player-challenge-images {
+    display: flex;
+    flex-direction: column; /* Stack images vertically */
+    align-items: center; /* Center images horizontally */
+    justify-content: center; /* Center images vertically */
+    margin-top: 20px; /* Add spacing above the images */
+    gap: 15px; /* Add spacing between the images */
+}
+
+#player-challenge-submit {
+    background-color: #c8102e; /* NBA red */
+    color: #ffffff; /* White text */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 8px;
+}
+
+#player-challenge-submit:hover {
+    background-color: #a60d24; /* Slightly darker red on hover */
+}
+
+#about-site-btn {
+    background-color: #d3d3d3; /* Light grey */
+    color: #333333; /* Darker text for contrast */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#about-site-btn:hover {
+    background-color: #b0b0b0; /* Slightly darker grey on hover */
+}
+
+#about-site-container {
+    text-align: center;
+    color: #ffffff; /* White text */
+    font-size: 16px;
+    margin: 20px auto;
+    max-width: 600px; /* Limit the width for better readability */
+    line-height: 1.6; /* Improve readability with line spacing */
+}
+
