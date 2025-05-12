@@ -126,7 +126,6 @@ function updatePlayerSuggestions(input, allPlayers) {
 
         // Add player image and name
         suggestionItem.innerHTML = `
-            <img src="${player.picture}" alt="${player.name}" class="suggestion-image">
             <span class="suggestion-name">${player.name}</span>
         `;
 
